@@ -1,0 +1,71 @@
+Script started on Thu 27 Apr 2017 09:17:34 PM PDT
+]0;dc8291@klaatu:~[?1034h[dc8291@klaatu ~]$ gdb ./gasp[K[K[K[Kgasp
+[?1034hGNU gdb (GDB) Red Hat Enterprise Linux 7.11-67.el7
+Copyright (C) 2016 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.  Type "show copying"
+and "show warranty" for details.
+This GDB was configured as "x86_64-redhat-linux-gnu".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+<http://www.gnu.org/software/gdb/documentation/>.
+For help, type "help".
+Type "apropos word" to search for commands related to "word"...
+Reading symbols from ./gasp...done.
+(gdb) break 67
+Breakpoint 1 at 0x400af4: file gasp.c, line 67.
+(gdb) break 29
+Breakpoint 2 at 0x4008ab: file gasp.c, line 29.
+(gdb) b[Krun dog test.txt
+Starting program: /homes/dc8291/gasp dog test.txt
+Missing separate debuginfos, use: debuginfo-install glibc-2.17-157.el7_3.1.x86_64
+
+Breakpoint 1, main (argc=3, argv=0x7fffffffde28) at gasp.c:68
+68	  int i_option = 0; // determines whether -i flag has been entered
+(gdb) print(arv[Kgv[2[K3])
+$1 = 0x0
+(gdb) print(argv[3])[1P])2])
+$2 = 0x7fffffffe0ea "test.txt"
+(gdb) continue
+Continuing.
+
+Breakpoint 2, process (string=0x7fffffffe0e6 "dog", 
+    file_name=0x7fffffffe0ea "test.txt", i=0, n=0) at gasp.c:29
+29	  FILE *file = fopen(file_name, "r"); // initializing the file
+(gdb) bt
+#0  process (string=0x7fffffffe0e6 "dog", file_name=0x7fffffffe0ea "test.txt", 
+    i=0, n=0) at gasp.c:29
+#1  0x0000000000400c3f in main (argc=3, argv=0x7fffffffde28) at gasp.c:95
+(gdb) list
+24	/* Parameter: takes in two char*, and two ints
+25	 * Goes through one file and checks each line for the matching pattern
+26	 * If file does not exist, it exits.
+27	 */
+28	void process(char* string, char* file_name, int i, int n){
+29	  FILE *file = fopen(file_name, "r"); // initializing the file
+30	  if(file == NULL){
+31	    fprintf(stderr, "Error: the file \"%s\" does not exist.\n", file_name);
+32	    exit(1); 
+33	  } else {
+(gdb) print(file_name)
+$3 = 0x7fffffffe0ea "test.txt"
+(gdb) print(file_)[K[K_
+No symbol "file_" in current context.
+(gdb) print()[Kfile_[K)
+$4 = (FILE *) 0x7fffffffe0e6
+(gdb) continue
+Continuing.
+File:test.txt   I love dogs.
+File:test.txt   let's buy a dog.
+File:test.txt   dogs dogs dogs
+[Inferior 1 (process 13266) exited normally]
+(gdb) quit
+]0;dc8291@klaatu:~[dc8291@klaatu ~]$ y
+bash: y: command not found
+]0;dc8291@klaatu:~[dc8291@klaatu ~]$ e[Kexit
+exit
+
+Script done on Thu 27 Apr 2017 09:19:42 PM PDT

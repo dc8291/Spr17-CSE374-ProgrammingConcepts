@@ -1,0 +1,66 @@
+Script started on Tue 04 Apr 2017 03:26:00 PM PDT
+]0;dc8291@klaatu:~[?1034h[dc8291@klaatu ~]$ echo Hello world
+Hello world
+]0;dc8291@klaatu:~[dc8291@klaatu ~]$ passwd
+Changing password for user dc8291.
+Changing password for dc8291.
+(current) UNIX password: 
+New password: 
+Retype new password: 
+passwd: all authentication tokens updated successfully.
+]0;dc8291@klaatu:~[dc8291@klaatu ~]$ date
+Tue Apr  4 15:26:30 PDT 2017
+]0;dc8291@klaatu:~[dc8291@klaatu ~]$ ls
+hw0.script  hw1.part1
+]0;dc8291@klaatu:~[dc8291@klaatu ~]$ cd ~
+]0;dc8291@klaatu:~[dc8291@klaatu ~]$ ls -a
+[0m[01;34m.[0m   .bash_history  .bash_profile  .emacs      hw1.part1  [01;34m.mozilla[0m
+[01;34m..[0m  .bash_logout   .bashrc        hw0.script  .kshrc     .zshrc
+]0;dc8291@klaatu:~[dc8291@klaatu ~]$ mkdir temp
+]0;dc8291@klaatu:~[dc8291@klaatu ~]$ mv temp files [K
+]0;dc8291@klaatu:~[dc8291@klaatu ~]$ cd files
+]0;dc8291@klaatu:~/files[dc8291@klaatu files]$ date > now
+]0;dc8291@klaatu:~/files[dc8291@klaatu files]$ cp now before
+]0;dc8291@klaatu:~/files[dc8291@klaatu files]$ ls -l
+total 8
+-rw-rw-r-- 1 dc8291 dc8291 29 Apr  4 15:27 before
+-rw-rw-r-- 1 dc8291 dc8291 29 Apr  4 15:27 now
+]0;dc8291@klaatu:~/files[dc8291@klaatu files]$ touch temp
+]0;dc8291@klaatu:~/files[dc8291@klaatu files]$ mv temp test
+]0;dc8291@klaatu:~/files[dc8291@klaatu files]$ cd ..
+]0;dc8291@klaatu:~[dc8291@klaatu ~]$ rm -r files
+]0;dc8291@klaatu:~[dc8291@klaatu ~]$ echo "It's a secret"\!"" > secretfile
+]0;dc8291@klaatu:~[dc8291@klaatu ~]$ chmod -c -w secretfile
+mode of ‘secretfile’ changed from 0664 (rw-rw-r--) to 0444 (r--r--r--)
+]0;dc8291@klaatu:~[dc8291@klaatu ~]$ ls -s[Kl
+total 8
+-rw-rw-r-- 1 dc8291 dc8291 822 Mar 28 19:26 hw0.script
+-rw-rw-r-- 1 dc8291 dc8291   0 Apr  4 15:26 hw1.part1
+-r--r--r-- 1 dc8291 dc8291  15 Apr  4 15:28 secretfile
+]0;dc8291@klaatu:~[dc8291@klaatu ~]$ cat >> secretfile
+bash: secretfile: Permission denied
+]0;dc8291@klaatu:~[dc8291@klaatu ~]$ chmod -c -r secretfile
+mode of ‘secretfile’ changed from 0444 (r--r--r--) to 0000 (---------)
+]0;dc8291@klaatu:~[dc8291@klaatu ~]$ cat [K[K[K[Kls -l
+total 8
+-rw-rw-r-- 1 dc8291 dc8291 822 Mar 28 19:26 hw0.script
+-rw-rw-r-- 1 dc8291 dc8291   0 Apr  4 15:26 hw1.part1
+---------- 1 dc8291 dc8291  15 Apr  4 15:28 secretfile
+]0;dc8291@klaatu:~[dc8291@klaatu ~]$ cat secretfile
+cat: secretfile: Permission denied
+]0;dc8291@klaatu:~[dc8291@klaatu ~]$ uname -r
+4.4.52-1.el7.elrepo.x86_64
+]0;dc8291@klaatu:~[dc8291@klaatu ~]$ ps -ui[K dc8291
+  PID TTY          TIME CMD
+22614 ?        00:00:00 sshd
+22622 pts/16   00:00:00 bash
+24369 pts/16   00:00:00 script
+24371 pts/16   00:00:00 script
+24372 pts/10   00:00:00 bash
+24470 pts/10   00:00:00 ps
+]0;dc8291@klaatu:~[dc8291@klaatu ~]$ grep dc8291 /etc/passwd
+[01;31m[Kdc8291[m[K:x:26692:26692::/homes/[01;31m[Kdc8291[m[K:/bin/bash
+]0;dc8291@klaatu:~[dc8291@klaatu ~]$ exit
+exit
+
+Script done on Tue 04 Apr 2017 03:29:59 PM PDT

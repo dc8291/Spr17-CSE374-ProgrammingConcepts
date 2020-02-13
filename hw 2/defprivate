@@ -1,0 +1,3 @@
+#Daniel Chai, CSE 374, HW 2, Problem 2, April 13th 2017
+
+alias private='chmod -c g=u,o-w -R $1'

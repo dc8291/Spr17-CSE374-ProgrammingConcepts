@@ -1,0 +1,24 @@
+1. echo tweet
+      prints out "tweet"
+
+   echo tweet > tweet.txt ; cat tweet.txt
+      created a file named tweet.txt with the text "tweet", 
+      and then cat that file which outputs the data in the file.
+
+   rm ~/*
+   mkdir tweet ; ls
+      must remove everything in the directory before making a directory named tweet.
+
+   echo tweet > tweet.txt ; grep tweet tweet.txt
+      made a file named tweet.txt that has a word tweet in it.
+      
+   touch tweet
+   alias "tweet"='cat tweet'
+   tweet
+   !!
+      I first made a file named "tweet" that has no output.
+      Then I aliased the word "tweet" with "cat tweet" so that I can only see the alias when I call !!.
+      Next, I called the function tweet, which resulted in no output since "tweet" file is an empty file.
+      !! only printed out the name of the alias, which is "tweet".
+
+   

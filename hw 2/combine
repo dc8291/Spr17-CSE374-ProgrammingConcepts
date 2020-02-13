@@ -1,0 +1,18 @@
+#!/bin/bash
+#Daniel Chai, CSE 374 HW2, Problem 3, April 13th 2017
+
+if [ $# -lt 2 ]
+then
+    >&2 echo "Error: less than two arguments"
+    exit 1
+fi
+
+if [ -d $1 ] || [ -e $1 ]
+then 
+   >&2 echo "Error: first file exists"
+   exit 1
+fi
+
+firstFile=$1
+shift
+cat $@ 2> $firstFile

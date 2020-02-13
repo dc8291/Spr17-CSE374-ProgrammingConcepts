@@ -1,0 +1,21 @@
+#!/bin/bash
+#Daniel Chai, CSE 374, HW2, Problem 4, April 13th 2017
+
+if [ $# -lt 2 ]
+then 
+   echo "Error: less than two arguments"
+   exit 1
+fi 
+
+firstFile=$1
+shift
+
+date >> $firstFile
+sum=0
+for x in "$@"
+do
+   wc -l "$x" 1>> $firstFile
+   line=`wc -l < "$x"`
+   let sum=$sum+$line
+done
+echo "$sum total" >> $firstFile

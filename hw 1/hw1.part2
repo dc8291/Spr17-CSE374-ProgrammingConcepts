@@ -1,0 +1,25 @@
+1. wc - print newline, word, and byte counts for each file
+   -l prints the newline counts
+
+2. 157  200 7733 /etc/passwd
+
+3. First, you need to find the PID by using ps. Then you can use kill "PID".
+
+4. $HOME stores the home directory. For me, it is "/Home/dc8291"
+
+5. $PATH contains list of directories to search for commands.
+   $LOGNAME contains the current user's name
+
+6. "find" command
+
+7. "find" allows you to find a specfic file
+   "which" allows you to find the path for executables 
+
+8. The first command is making the output of echo the file named "something".
+   The second command just displays it to the terminal.
+
+9. This will overwrite whatever is inside the "something".
+   "something" will now contain "more text".
+
+10. The ">>" sign means that it is appending to whatever is already in the file.
+    So, final state of "something" will be "more text yet more text".
